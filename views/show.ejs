@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show Inventory</title>
+</head>
+<body>
+    <table>
+
+        <tr>
+            <td><%=item.name%></td>
+            <td><%=item.description%></td>
+            <td><%=item.number%></td>
+           
+        </tr>
+    </table>
+            <div>
+                <a href="/clothing/<%=item.id %>/edit" class="btn waves-effect waves-light teal">Edit Item</a>
+                <form action="/clothing/<%= item.id %>?_method=DELETE" method="POST">
+                <button class="btn red waves-effect waves-light">Delete</button>
+                <a href="/clothing">Back to Inventory</a>
+
+                </form>
+            </div>
+        </div>
+     </div>
+</body>
+</html>

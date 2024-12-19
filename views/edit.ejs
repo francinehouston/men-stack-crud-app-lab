@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Inventory</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            max-width: 600px;
+            margin: auto;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        input, select {
+            padding: 8px;
+            margin-top: 5px;
+            font-size: 1rem;
+        }
+        button {
+            margin-top: 20px;
+            padding: 10px 15px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        a {
+            margin-top: 15px;
+            text-decoration: none;
+            color: #007BFF;
+        }
+    </style>
+</head>
+<body>
+    <h1>Edit <%= item.name %></h1>
+    <form action="/clothing/<%= item._id%>?_method=PUT" method="POST">
+        <label>Name</label>
+        <input type="text" id="name" name="name" value="<%= item.name %>" required>
+       <!--- <select id="name" name="name" required></select>>
+-->
+        <label>description</label> 
+        <textarea id="description" name="description" rows="4" required><%= item.description %></textarea>
+<label for="number">How Many</label>
+<input type="number" id="number" name="number" required>
+
+ <!-- Category Field -->
+ <div class="form-group">
+    <label for="category">Category:</label>
+    <select id="category" name="category" required>
+      <option value="shirts">Shirts</option>
+      <option value="pants">Pants</option>
+      <option value="dresses">Dresses</option>
+      <option value="jackets">Jackets</option>
+      <option value="coats">Coats</option>
+      <option value="knitwear">knitwear</option>
+    </select>
+  </div>
+
+
+        <button type="submit">Save Changes</button>
+    </form>
+    
+       <a href="/clothing">Cancel</a>
+
+      <form action="/clothing/<%=item._id%>?_method=DELETE" method="POST">
+        <button type="submit">Delete</button>
+        </form>
+  
+    
+   
+</body>
+</html>

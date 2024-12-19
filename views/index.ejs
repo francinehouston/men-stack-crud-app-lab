@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clothing App</title>
+
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+        }
+        img {
+            width: 50px;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+   <h1>Welcome to the Clothing App🧥 </h1>
+    <p>Clothing Inventory</p>
+    <table>
+    <thead>
+        <tr>
+          
+            <th>Name</th>
+        
+        </tr>
+    </thead>
+
+    <tbody>
+        <% clothing.forEach(item => { %>
+            <tr>
+                <td><a href="/clothing/<%=item.id %>"><%= item.name %></a></td>
+            
+            </tr>
+        <% }) %>
+    </tbody>
+    </table>
+</table>
+
+<a href = "/clothing/new" class="btn wave-affect waves-light teal"> Add New Clothing</a>
+</body>
+</html>
